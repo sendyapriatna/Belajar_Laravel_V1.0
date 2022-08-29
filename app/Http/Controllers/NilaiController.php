@@ -20,48 +20,46 @@ class NilaiController extends Controller
         return view('Nilai.nilai',['data'=>$data],compact(['mahasiswa']));
     }
 
-    // public function create()
-    // {
-    //     return view('Mahasiswa.create');
-    // }
+    public function create()
+    {
+        return view('Nilai.create');
+    }
 
-    // public function insertMahasiswa(Request $post)
-    // {
-    //         $valididatedData = $post->validate([
-    //             'nim' => 'required',
-    //             'nama' => 'required',
-    //             'tanggal_lahir' => 'required',
-    //             'jenis_kelamin' => 'required',
-    //             'prodi' => 'required',
-    //         ]);
+    public function insertNilai(Request $post)
+    {
+            $valididatedData = $post->validate([
+                'nim' => 'required',
+                'kode_matkul' => 'required',
+                'nama_matkul' => 'required',
+                'nilai' => 'required',
+            ]);
 
-    //         Mahasiswa::create($valididatedData);
-    //         return redirect('/mahasiswa');
-    // }
+            Nilai::create($valididatedData);
+            return redirect('/nilai');
+    }
 
-    // public function editMahasiswa($id)
-    // {
-    //     $data = DB::table('mahasiswa')->where('id', $id)->first();
-    //     return view('Mahasiswa.edit', ['data' => $data]);
-    // }
+    public function editNilai($id)
+    {
+        $data = DB::table('nilai')->where('id', $id)->first();
+        return view('Nilai.edit', ['data' => $data]);
+    }
 
-    // public function updateMahasiswa(Request $post)
-    // {
-    //         DB::table('mahasiswa')->where('id', $post->id)->update([
-    //             'nim' => $post->nim,
-    //             'nama' => $post->nama,
-    //             'tanggal_lahir' => $post->tanggal_lahir,
-    //             'jenis_kelamin' => $post->jenis_kelamin,
-    //             'prodi' => $post->prodi,
-    //         ]);
+    public function updateNilai(Request $post)
+    {
+            DB::table('nilai')->where('id', $post->id)->update([
+                // 'nim' => $post->nim,
+                'kode_matkul' => $post->kode_matkul,
+                'nama_matkul' => $post->nama_matkul,
+                'nilai' => $post->nilai,
+            ]);
 
-    //         return redirect('/mahasiswa');
-    // }
+            return redirect('/nilai');
+    }
 
-    // public function hapusMahasiswa($id)
-    // {   
-    //     DB::table('mahasiswa')->where('id', $id)->delete();
-    //     return redirect('/mahasiswa');
+    public function hapusNilai($id)
+    {   
+        DB::table('nilai')->where('id', $id)->delete();
+        return redirect('/nilai');
         
-    // }
+    }
 }

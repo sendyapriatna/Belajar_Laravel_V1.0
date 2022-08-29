@@ -19,5 +19,6 @@ class Nilai extends Authenticatable
         'nim',
         'kode_matkul',
         'nama_matkul',
+        'nilai',
     ];
 }

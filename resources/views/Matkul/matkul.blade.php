@@ -31,6 +31,16 @@
                             + Tambah Data
                         </button>
                     </a>
+                    <!-- <a href="/mahasiswa">
+                        <button class="btn btn-warning px-4 py-3">
+                            Mahasiswa
+                        </button>
+                    </a>
+                    <a href="/nilai">
+                        <button class="btn btn-success px-4 py-3">
+                            Nilai
+                        </button>
+                    </a> -->
                 </div>
             </div>
 

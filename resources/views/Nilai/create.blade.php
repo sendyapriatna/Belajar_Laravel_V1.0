@@ -14,7 +14,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
 
-    <title>Tambah Matkul</title>
+    <title>Tambah Nilai</title>
 </head>
 
 <body>
@@ -24,36 +24,43 @@
 
             <div class="ttable border-line bg-white my-4">
                 <div class="title">
-                    <h2 class="fw-bold mt-5">Tambah Data Mata Kuliah</h2>
+                    <h2 class="fw-bold mt-5">Tambah Data Nilai Mahasiswa</h2>
                 </div>
                 <div class="p-2">
-                    <form method="POST" action="insertMatkul">
+                    <form method="POST" action="insertNilai">
                         @csrf
+                        <div class="form-group row py-2">
+                            <label for="" class="col-sm-3 col-form-label">Nim</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control color-neutral-400" name="nim" id="">
+                            </div>
+                        </div>
+
                         <div class="form-group row py-2">
                             <label for="" class="col-sm-3 col-form-label">Kode Matkul</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control color-neutral-400" name="kode_matkul" id="" placeholder="MK0001">
+                                <input type="text" class="form-control color-neutral-400" name="kode_matkul" id="" >
                             </div>
                         </div>
 
                         <div class="form-group row py-2">
                             <label for="" class="col-sm-3 col-form-label">Nama Matkul</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control color-neutral-400" name="nama_matkul" id="" placeholder="Algoritma">
+                                <input type="text" class="form-control color-neutral-400" name="nama_matkul" id="" >
                             </div>
                         </div>
 
                         <div class="form-group row py-2">
-                            <label for="" class="col-sm-3 col-form-label">SKS</label>
+                            <label for="" class="col-sm-3 col-form-label">Nilai</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control color-neutral-400" name="sks" id="" placeholder="2">
+                                <input type="number" class="form-control color-neutral-400" name="nilai" id="" >
                             </div>
                         </div>
 
                         <div class="form-group row mx-1 py-2">
                             <label for="" class="col-3"></label>
                             <button type="submit" class="btn btn-primary ml-1 px-4 py-3">Simpan</button>
-                            <a href="/matkul" type="button" class="btn btn-outline-danger ml-2 px-4 py-3"> Batal </a>
+                            <a href="/nilai" type="button" class="btn btn-outline-danger ml-2 px-4 py-3"> Batal </a>
                         </div>
                     </form>
                 </div>
