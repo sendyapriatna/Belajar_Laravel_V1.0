@@ -27,7 +27,7 @@
                     <h2 class="fw-bold mt-5">Edit Data Nilai Mahasiswa</h2>
                 </div>
                 <div class="p-2">
-                    <form method="POST" action="/nilai/updateMatkul">
+                    <form method="POST" action="/nilai/updateNilai">
                         <input type="hidden" name="_token" value="<?php echo csrf_token() ?>">
                         <input type="hidden" id="id" name="id" value="{{ $data->id }}" class="form-control select2">
 
